@@ -19,6 +19,11 @@ jobs:
           name: Print the Current Time
           command: date
       - run:
-          apt-get update
-          apt-get install build-essential
-          make
+          name: apt get update
+          command: apt-get update
+      - run:
+          name: install build essential
+          command: apt-get install build-essential
+      - run:
+          name: make
+          command:make
