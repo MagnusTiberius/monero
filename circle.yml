@@ -8,7 +8,7 @@ jobs:
       - run: apt-get -y update
       #- run: apt-get -y install build-essential
       #- run: apt-get -y install libboost-all-dev
-      - run: wget -O boost_1_60_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.60.0/boost_1_60_0.tar.gz/download
+      - run: wget -O boost_1_66_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.66.0/boost_1_66_0.tar.gz/download
       - run: apt-get -y install aptitude
       - run: apt-get -y install libzmq3-dev
 
