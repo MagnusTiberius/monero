@@ -7,7 +7,5 @@ jobs:
       - checkout
       - run: apt-get -y update
       - run: apt-get -y install build-essential
-      - run: add-apt-repository ppa:george-edison55/cmake-3.x
-      - run: apt-get -y update      
       - run: apt-get -y install cmake
       - run: make
