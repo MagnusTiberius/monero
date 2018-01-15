@@ -19,11 +19,11 @@ jobs:
           name: Print the Current Time
           command: date
       - run:
-          name: apt get update
+          name: sudo apt get update
           command: apt-get update
       - run:
           name: install build essential
-          command: apt-get install build-essential
+          command: sudo apt-get install build-essential
       - run:
           name: make
           command:make
