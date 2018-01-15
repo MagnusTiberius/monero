@@ -5,6 +5,7 @@ jobs:
       - image: gcc:latest
     steps:
       - checkout
+      - run: apt-get update
       - run: apt-get install build-essential
       - run: add-apt-repository ppa:george-edison55/cmake-3.x
       - run: apt-get update      
