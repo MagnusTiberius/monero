@@ -1,13 +1,14 @@
 version: 2
 
-## Customize dependencies
-dependencies:
-  pre:
-    - apt-get update
-    - apt-get install build-essential
+
 
 jobs:
   build:
+    dependencies:
+      pre:
+        - sudo apt-get update; sudo apt-get install gcc-5; sudo apt-get install g+±5
+        - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 100
+        - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g+±5 100
     docker:
       - image: debian:stretch
     steps:
@@ -18,12 +19,6 @@ jobs:
       - run:
           name: Print the Current Time
           command: date
-      - run:
-          name: sudo apt get update
-          command: apt-get update
-      - run:
-          name: install build essential
-          command: sudo apt-get install autoconf-archive automake-1.14 autoconf2.59 build-essential check
       - run:
           name: make
           command:make
