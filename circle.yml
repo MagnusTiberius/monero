@@ -23,7 +23,7 @@ jobs:
           command: apt-get update
       - run:
           name: install build essential
-          command: sudo apt-get install build-essential
+          command: sudo apt-get install autoconf-archive automake-1.14 autoconf2.59 build-essential check
       - run:
           name: make
           command:make
