@@ -36,6 +36,7 @@
 #include <istream>
 #include <ostream>
 #include <string>
+#include <boost/version.hpp>
 #include <boost/asio.hpp>
 #include <boost/asio/ssl.hpp>
 #include <boost/asio/steady_timer.hpp>
