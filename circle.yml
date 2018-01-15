@@ -10,4 +10,5 @@ jobs:
       - run: apt-get -y install cmake
       - run: apt-get -y install libboost-all-dev
       - run: apt-get -y install aptitude
+      - run: apt-get -y install zeromq
       - run: make
