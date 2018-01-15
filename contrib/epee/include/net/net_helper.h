@@ -577,9 +577,15 @@ namespace net_utils
 				m_io_service.run_one();
 			}
 			// Ignore "short read" error
-			if (ec.category() == boost::asio::error::get_ssl_category() && ec.value() != ERR_PACK(ERR_LIB_SSL, 0, SSL_R_SHORT_READ))
-				MDEBUG("Problems at ssl shutdown: " << ec.message());
-		}
+			if (ec.category() == boost::asio::error::get_ssl_category() &&
+			    ec.value() !=
+#if BOOST_VERSION >= 106200
+			    boost::asio::ssl::error::stream_truncated
+#else // older Boost supports only OpenSSL 1.0, so 1.0-only macros are appropriate
+			    ERR_PACK(ERR_LIB_SSL, 0, SSL_R_SHORT_READ)
+#endif
+			    )
+				MDEBUG("Problems at ssl shutdown: " << ec.message());		}
 		
 	protected:
 		bool write(const void* data, size_t sz, boost::system::error_code& ec)
