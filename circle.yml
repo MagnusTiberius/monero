@@ -5,7 +5,7 @@ jobs:
       - image: gcc:latest
     steps:
       - checkout
-      - run: sudo apt-get install software-properties-common
+      - run: sudo apt-get install build-essential
       - run: sudo add-apt-repository ppa:george-edison55/cmake-3.x
       - run: sudo apt-get update      
       - run: sudo apt-get install cmake
