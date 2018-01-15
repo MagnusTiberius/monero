@@ -10,10 +10,6 @@ jobs:
       - run: apt-get -y install cmake
       - run: apt-get -y install libboost-all-dev
       - run: apt-get -y install aptitude
-      - run: git clone https://github.com/zeromq/libzmq
-      - run: cd libzmq
-      - run: mkdir cmake-build 
-      - run: cmake .. && make -j 4
-      - run: make test && make install && sudo ldconfig
-      - run: cd ..
+      - run: wget https://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/Release.key -O- | sudo apt-key add
+      - run: apt-get -y install libzmq3-dev
       - run: make
