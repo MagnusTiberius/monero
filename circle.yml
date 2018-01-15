@@ -15,7 +15,7 @@ jobs:
       - run: wget https://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/Release.key -O- | apt-key add
       - run: tar xzvf boost_1_60_0.tar.gz
       - run: cd boost_1_60_0/
-      - run: apt-get install build-essential g++ python-dev autotools-dev libicu-dev build-essential libbz2-dev libboost-all-dev
+      - run: apt-get install -y build-essential g++ python-dev autotools-dev libicu-dev build-essential libbz2-dev libboost-all-dev
       - run: ./bootstrap.sh --prefix=/usr/local
       - run: ./b2 install
       
