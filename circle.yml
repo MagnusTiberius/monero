@@ -10,6 +10,6 @@ jobs:
       - run: apt-get -y install cmake
       - run: apt-get -y install libboost-all-dev
       - run: apt-get -y install aptitude
-      - run: wget https://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/Release.key -O- | sudo apt-key add
+      - run: wget https://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/Release.key -O- | apt-key add
       - run: apt-get -y install libzmq3-dev
       - run: make
