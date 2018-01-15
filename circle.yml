@@ -1,24 +1,8 @@
-version: 2
-
-
-
+version: 2.0
 jobs:
   build:
-    dependencies:
-      pre:
-        - sudo apt-get update; sudo apt-get install gcc-5; sudo apt-get install g+±5
-        - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 100
-        - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g+±5 100
     docker:
-      - image: debian:stretch
+      - image: gcc:latest
     steps:
       - checkout
-      - run:
-          name: Greeting
-          command: echo Hello, world.
-      - run:
-          name: Print the Current Time
-          command: date
-      - run:
-          name: make
-          command:make
+      - run: make
