@@ -5,22 +5,13 @@ jobs:
       - image: gcc:latest
     steps:
       - checkout
-      - run: apt-get -y update
-      #- run: apt-get -y install build-essential
-      #- run: apt-get -y install libboost-all-dev
-      - run: wget -O boost_1_66_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.66.0/boost_1_66_0.tar.gz/download
-      - run: apt-get -y install aptitude
-      - run: apt-get -y install libzmq3-dev
-
-      #- run: wget https://download.opensuse.org/repositories/network:/messaging:/zeromq:/release-stable/Debian_9.0/Release.key -O- | apt-key add
-      #- run: tar xzvf boost_1_60_0.tar.gz
-      #- run: cd boost_1_60_0/
-      - run: apt-get install -y build-essential g++ python-dev autotools-dev libicu-dev build-essential libbz2-dev libboost-all-dev openssl libssl-dev libunwind8-dev liblzma-dev libreadline6-dev libldns-dev libexpat1-dev doxygen graphviz
-      #- run: bootstrap.sh --prefix=/usr/local
-      #- run: b2 install
-      #- run: cd ..
-      - run: apt-get -y install cmake
-      - run: make
+      #- run: apt-get -y update
+      #- run: wget -O boost_1_66_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.66.0/boost_1_66_0.tar.gz/download
+      #- run: apt-get -y install aptitude
+      #- run: apt-get -y install libzmq3-dev
+      #- run: apt-get install -y build-essential g++ python-dev autotools-dev libicu-dev build-essential libbz2-dev libboost-all-dev openssl libssl-dev libunwind8-dev liblzma-dev libreadline6-dev libldns-dev libexpat1-dev doxygen graphviz
+      #- run: apt-get -y install cmake
+      #- run: make
       - run: docker build -t magnustiberius/monero .
       - run: docker login -u="$DOCKERID" -p="$DOCKERIDPWD"
       - run: docker push magnustiberius/monero
