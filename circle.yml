@@ -5,7 +5,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build --rm=false -t $CIRCLE_USERNAME/$CIRCLE_PROJECT_REPONAME .
+    - docker build --rm=false -t magnustiberius/monero .
 
 
 deployment:
@@ -13,4 +13,4 @@ deployment:
     branch: master
     commands:
       - docker login  -u $DOCKERID -p $DOCKERIDPWD
-      - docker push $CIRCLE_USERNAME/$CIRCLE_PROJECT_REPONAME
+      - docker push magnustiberius/monero
