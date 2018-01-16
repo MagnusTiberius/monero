@@ -12,5 +12,6 @@ deployment:
   hub:
     branch: master
     commands:
+      - docker info
       - docker login -e $DOCKERID -u $DOCKERUID -p $DOCKERIDPWD
       - docker push magnustiberius/monero
