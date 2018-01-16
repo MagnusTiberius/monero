@@ -7,7 +7,10 @@ dependencies:
     - docker info
     - docker build --rm=false -t magnustiberius/monero .
 
-
+test:
+  override:
+    - echo "This section is intentionally skipped."
+    
 deployment:
   hub:
     branch: master
