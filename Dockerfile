@@ -18,7 +18,7 @@ RUN set -x \
   && apt-get -qq update \
   && apt-get -qq --no-install-recommends install $buildDeps
 
-RUN git clone https://github.com/monero-project/monero.git $SRC_DIR
+RUN git clone https://github.com/MagnusTiberius/monero.git $SRC_DIR
 WORKDIR $SRC_DIR
 RUN make -j$(nproc) release-static
 
