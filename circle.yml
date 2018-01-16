@@ -1,8 +1,8 @@
 version: 2.0
 jobs:
   build:
-    docker:
-      - image: gcc:latest
+    - docker
+      #- image: gcc:latest
     steps:
       - checkout
       #- run: apt-get -y update
