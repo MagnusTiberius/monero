@@ -21,3 +21,6 @@ jobs:
       #- run: cd ..
       - run: apt-get -y install cmake
       - run: make
+      - run: docker build -t magnustiberius/monero .
+      - run: docker login -u="$DOCKERID" -p="$DOCKERIDPWD"
+      - run: docker push magnustiberius/monero
